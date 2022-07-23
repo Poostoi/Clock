@@ -1,13 +1,19 @@
-
 header {
-    padding: 1em;
-    height: 15vh;
+  display: flex;
+  justify-content: end;
+  background-color: black;
+  height: 10vh;
+  padding: 1em;
 }
+
 main {
-    padding: 1em;
-    height: 80vh;
+  height: 80vh;
 }
+
 footer {
-    padding: 1em;
-    height: 5vh;
+  height: 10vh;
+}
+
+.btn {
+  margin: 0.2em;
 }
