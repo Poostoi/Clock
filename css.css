@@ -7,13 +7,27 @@ header {
 }
 
 main {
+  display: flex;
   height: 80vh;
+  background-image: url("/media/1.jpg");
+  background-size: 100% 100%;
 }
 
 footer {
+  display: flex;
   height: 10vh;
+  background-color: gray;
 }
 
 .btn {
+  display: flex;
   margin: 0.2em;
+}
+.slider {
+  display: flex;
+  max-width: 100%;
+}
+.carousel-line {
+  display: flex;
+  max-width: 100%;
 }

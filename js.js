@@ -1,5 +1,6 @@
-const buttonChangeColor = document.getElementsByTagName("button");
-
+const buttonChangeColor = document.querySelector(".color");
+const buttonChangeImage = document.querySelector(".photo");
+let counterImage = 1;
 const getRandomColorHex = () => {
   const symbol = "0123456789ABCDEF";
   let color = "#";
@@ -8,8 +9,23 @@ const getRandomColorHex = () => {
   }
   return color;
 };
-const changeColorBackground = () => {
-  const body = document.getElementsByTagName("body");
-  body[0].style.background = getRandomColorHex();
+
+const getNextImage = () => {
+  if (counterImage >= 3) {
+    counterImage = 0;
+  }
+  counterImage++;
+  return `/media/${counterImage}.jpg`;
 };
-buttonChangeColor[0].onclick = changeColorBackground;
+const changeColorBackground = () => {
+  const main = document.querySelector(".main");
+  main.style.backgroundImage = "none";
+  main.style.background = getRandomColorHex();
+};
+const changePhotoBackground = () => {
+  const main = document.querySelector(".main");
+  main.style.backgroundImage = `url(${getNextImage()})`;
+  main.style.backgroundSize = "100% 100%";
+};
+buttonChangeColor.onclick = changeColorBackground;
+buttonChangeImage.onclick = changePhotoBackground;
